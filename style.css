@@ -1,0 +1,229 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root{
+    --main-blue: #7dd3fc;
+    --main-white: #f4f4f4;
+    --main-grey: #e4e4e4;
+    --main-dark: #333;
+    --maim-yellow: #fdba74;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.3;
+}
+
+.icon {
+    width: 36px;
+    height: 36px;
+}
+
+.icon_X_2 {
+    width: 50px;
+    height: 50px;
+}
+
+.icon_X_3 {
+    width: 80px;
+    height: 80px;
+}
+
+.container-all {
+    display: grid;
+    grid-template-columns: 1fr 3fr ;
+    grid-template-rows: 1fr 4fr;
+    grid-template-areas: 
+    "aside header"
+    "aside main";
+}
+
+/* /////////////styling header/////////////// */
+
+header {
+    grid-area: header;
+    background-color: var(--main-white);
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas: 
+    "search"
+    "header-links";
+}
+
+.search{
+    grid-area: search;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+}
+
+.header-links {
+    grid-area: header-links;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+}
+
+.right,
+.left {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 0 20px;
+}
+
+.left {
+    justify-content: start;
+}
+
+.right {
+    justify-content: end;
+}
+
+#search {
+    width: 80%;
+    border: 1px solid var(--main-grey);
+    border-radius: 20px;
+    height: 45px;
+    background-color: var(--main-grey);
+}
+
+button {
+    width: 80%;
+    min-width: 100px;
+    border: 1px solid var(--main-blue);
+    border-radius: 20px;
+    height: 45px;
+    background-color: var(--main-blue);
+}
+
+.name-data {
+    min-width: 200px;
+}
+
+/* /////////////styling aside/////////////// */
+
+aside {
+    grid-area: aside;
+    background-color: var(--main-blue);
+}
+
+.sidebar-links {
+    padding: 30px 0;
+    display: grid;
+    grid-template-rows: 2fr 7fr 3fr;
+    gap: 60px;
+}
+
+.dashboard,
+.general-links,
+.additional-links {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    align-items: center;
+    gap: 25px;
+}
+
+.dashboard > div,
+.general-links > div,
+.additional-links > div {
+    display: grid;
+    justify-content: end;
+}
+
+
+/* /////////////styling main/////////////// */
+
+main {
+    grid-area: main;
+    background-color: var(--main-grey);
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    grid-template-areas: 
+    "main main announcements"
+    "main main trending";
+}
+
+.your-project{
+    grid-area: main;
+    display: grid;
+    gap: 10px;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    padding: 10px;
+}
+
+.main-box {
+    display: grid;
+    grid-template-rows: repeat(auto-fit, minmax(150px, 1fr));
+    background-color: var(--main-white);
+    border: 5px solid var(--main-white);
+    border-radius: 5px;
+    border-left-color: var(--maim-yellow);
+}
+
+.main-box-text {
+    padding: 20px 30px 0 20px;
+}
+
+.main-box-text > p {
+    text-align: justify;
+    text-justify: inter-word;
+}
+
+.main-box-icons{
+    display: flex;
+    justify-content: end;
+    align-items: flex-end;
+    gap: 15px;
+    padding: 10px 20px 20px 0;
+}
+
+.announcements {
+    grid-area: announcements;
+    padding: 10px 10px 10px 0;
+    display: grid;
+    grid-template-rows: repeat(auto-fit, minmax(100px, 1fr));
+    gap: 3px;
+}
+
+.announcements-box-text {
+    padding: 10px 20px;
+    background-color: var(--main-white);
+    border: 1px solid var(--main-white);
+    border-radius: 5px;
+}
+
+.announcements-box-text > h4,
+.announcements-box-text > p {
+    text-align: justify;
+    text-justify: inter-word;
+}
+
+.trending {
+    grid-area: trending;
+    padding: 10px 10px 10px 0;
+    display: grid;
+    grid-template-rows: repeat(auto-fit, minmax(60px, 1fr));
+}
+
+.trending-box {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 20px;
+    background-color: var(--main-white);
+}
+
+.trending-box > div:first-child {
+    display: grid;
+    justify-content: end;
+}
