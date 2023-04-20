@@ -164,9 +164,8 @@ main {
     display: grid;
     grid-template-rows: repeat(auto-fit, minmax(150px, 1fr));
     background-color: var(--main-white);
-    border: 5px solid var(--main-white);
     border-radius: 5px;
-    border-left-color: var(--maim-yellow);
+    border-left: 5px solid var(--maim-yellow);
 }
 
 .main-box-text {
